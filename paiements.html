@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiements - Gestion Auditoire L2 IG</title>
+    <link rel="stylesheet" href="paiements.css">
+</head>
+<body class="body-dashboard">
+
+<!-- Barre de navigation latérale -->
+<nav class="sidebar">
+    <div class="sidebar-header">
+        <h2>L2 IG</h2>
+        <p id="sidebar-role-subtitle">Gestion Contributions</p>
+    </div>
+    <ul class="nav-links">
+        <li><a href="acceuil.html">Tableau de bord</a></li>
+        <li><a href="etudiants.html">Étudiants</a></li>
+        <li><a href="contributions.html">Contributions</a></li>
+        <li><a href="paiements.html" class="active">Paiements</a></li>
+        <li><a href="depenses.html">Dépenses</a></li>
+        <li><a href="connexion.html" id="btn-logout" class="logout-link">Déconnexion</a></li>
+    </ul>
+</nav>
+
+    <!-- Contenu Principal -->
+    <main class="main-content">
+        <header class="dashboard-header">
+            <h1 id="page-main-title">Gestion des Paiements</h1>
+            <div class="user-badge">
+                <span>Connecté entant que : <strong id="user-role-label">L2 Informatique de Gestion</strong></span>
+            </div>
+        </header>
+
+        <!-- Formulaire d'enregistrement / modification d'un paiement -->
+        <section class="form-section card" id="form-paiement-section">
+            <h3 id="form-title">Enregistrer un nouveau paiement</h3>
+            <form id="form-paiement">
+                <input type="hidden" id="edit-index" value="-1">
+                
+                <div class="form-grid">
+                    <div class="input-group" id="group-etudiant-select">
+                        <label for="etudiant-select">Étudiant</label>
+                        <select id="etudiant-select" required>
+                            <option value="">-- Choisir un étudiant --</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="contribution-select">Motif de contribution</label>
+                        <select id="contribution-select" required>
+                            <option value="">-- Choisir un contribution --</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="montant">Montant versé ($)</label>
+                        <input type="number" step="0.01" id="montant" placeholder="..........................................................................." required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="date-paiement">Date du paiement</label>
+                        <input type="date" id="date-paiement" required>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="btn-annuler" class="btn-secondary" style="display:none;">Annuler</button>
+                    <button type="submit" class="btn-principal" id="btn-submit">Valider le paiement</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Tableau de l'historique des paiements -->
+        <section class="table-section card">
+            <h3 id="table-title">Historique des Paiements</h3>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Matricule</th>
+                            <th>Nom de l'Étudiant</th>
+                            <th>Motif </th>
+                            <th>Montant</th>
+                            <th>Date</th>
+                            <th id="th-actions">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="liste-paiements">
+                        <!-- Rempli dynamiquement par JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="paiements.js"></script>
+</body>
+</html>
+
+    

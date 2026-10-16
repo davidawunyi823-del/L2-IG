@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body.body-dashboard {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f8fafc;
+    overflow-x: hidden;
+}
+
+/* --- Barre de navigation latérale (Sidebar) --- */
+.sidebar {
+    width: 260px;
+    background: #1e293b;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 20px;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sidebar-header h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #22c55e; /* Vert */
+    margin-bottom: 5px;
+}
+
+.sidebar-header p {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.nav-links {
+    list-style: none;
+    flex-grow: 1;
+}
+
+.nav-links li {
+    margin-bottom: 15px;
+}
+
+.nav-links a {
+    display: block;
+    padding: 12px 18px;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    background: #22c55e; /* Vert */
+    color: white;
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+.logout-link {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444 !important; /* Rouge */
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.logout-link:hover {
+    background: #ef4444 !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3) !important;
+}
+
+/* --- Contenu Principal avec animation d'apparition --- */
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.dashboard-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.user-badge {
+    background: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    font-size: 14px;
+    color: #475569;
+    border-left: 4px solid #22c55e;
+}
+
+.user-badge strong {
+    color: #1e293b;
+}
+
+/* --- Section des Cartes / Widgets de Statistiques --- */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Effets de couleur basés sur votre palette : Vert, Rouge, Jaune, Blanc */
+.card-vert {
+    border-left: 6px solid #22c55e;
+}
+.card-vert h3 { color: #16a34a; }
+
+.card-rouge {
+    border-left: 6px solid #ef4444;
+}
+.card-rouge h3 { color: #dc2626; }
+
+.card-jaune {
+    border-left: 6px solid #eab308;
+}
+.card-jaune h3 { color: #ca8a04; }
+
+.card-blanc {
+    border-left: 6px solid #64748b;
+    background: #ffffff;
+}
+.card-blanc h3 { color: #475569; }
+
+.stat-card h3 {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+/* --- Section d'Aperçu / Informations --- */
+.recent-section h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 15px;
+}
+
+.info-card {
+    background: white;
+    border-left: 6px solid #eab308; /* Touche de jaune */
+}
+
+.info-card p {
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.info-card p:last-child {
+    margin-bottom: 0;
+}

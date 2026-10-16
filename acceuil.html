@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Gestion Auditoire L2 IG</title>
+    <link rel="stylesheet" href="acceuil.css">
+</head>
+<body class="body-dashboard">
+
+<!-- Barre de navigation latérale (Commune à tous les onglets) -->
+<nav class="sidebar">
+    <div class="sidebar-header">
+        <h2>L2 IG</h2>
+        <p id="sidebar-role-subtitle">La Gestion de Contributions</p>
+    </div>
+    <ul class="nav-links">
+        <li><a href="acceuil.html" id="link-acceuil" class="active">Tableau de bord</a></li>
+        <li><a href="etudiants.html" id="link-etudiants">Étudiants</a></li>
+        <li><a href="contributions.html" id="link-contributions">Contributions</a></li>
+        <li><a href="paiements.html" id="link-paiements">Paiements</a></li>
+        <li><a href="depenses.html" id="link-depenses">Dépenses</a></li>
+        <li><a href="index.html" id="btn-logout" class="logout-link">Déconnexion</a></li>
+    </ul>
+</nav>
+
+<!-- Contenu Principal -->
+<main class="main-content">
+    <header class="dashboard-header">
+        <h1>Le Tableau de Bord</h1>
+        <div id="user-info" class="user-badge">
+            <span>Connecté en tant que : <strong id="nom-utilisateur">Utilisateur</strong></span>
+        </div>
+    </header>
+
+    <!-- Section des Cartes / Widgets de Statistiques (En Francs Congolais - FC) -->
+    <section class="stats-container">
+        <div class="card stat-card card-vert">
+            <h3>Les Entrées</h3>
+            <p id="total-entrees">0 FC</p>
+        </div>
+
+        <div class="card stat-card card-rouge">
+            <h3>Les Dépenses</h3>
+            <p id="total-sorties">0 FC</p>
+        </div>
+
+        <div class="card stat-card card-jaune">
+            <h3>Le Solde</h3>
+            <p id="solde-caisse">0 FC</p>
+        </div>
+
+        <div class="card stat-card card-blanc">
+            <h3>Total d'Étudiants</h3>
+            <p id="total-etudiants">0</p>
+        </div>
+    </section>
+
+    <!-- Section d'Aperçu / Activités Récentes -->
+    <section class="recent-section">
+        <h2>Accueil</h2>
+        <div class="card info-card">
+            <p>Bienvenue dans le système de gestion de l'auditoire de L2 Informatique de Gestion, Analyse et Programmation (Faculté des Sciences Économiques et de Gestion).</p>
+            <p>Le menu latéral est pour enregistrer les étudiants, configurer les contributions, valider les paiements ou suivre les dépenses.</p>
+        </div>
+    </section>
+</main>
+
+<!-- Script JavaScript externe pour l'accueil -->
+<script src="acceuil.js"></script>
+</body>
+</html>

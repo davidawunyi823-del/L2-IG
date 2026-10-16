@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Étudiants - Gestion Auditoire L2 IG</title>
+    <link rel="stylesheet" href="etudiants.css">
+</head>
+<body class="body-dashboard">
+
+<!-- Barre de navigation latérale -->
+<nav class="sidebar">
+    <div class="sidebar-header">
+        <h2>L2 IG</h2>
+        <p id="sidebar-role-subtitle">Gestion Contributions</p>
+    </div>
+    <ul class="nav-links">
+        <li><a href="acceuil.html">Tableau de bord</a></li>
+        <li><a href="etudiants.html" class="active">Étudiants</a></li>
+        <li><a href="contributions.html">Contributions</a></li>
+        <li><a href="paiements.html">Paiements</a></li>
+        <li><a href="depenses.html">Dépenses</a></li>
+        <li><a href="index.html" id="btn-logout" class="logout-link">Déconnexion</a></li>
+    </ul>
+</nav>
+
+    <!-- Contenu Principal -->
+    <main class="main-content">
+        <header class="dashboard-header">
+            <h1 id="page-main-title">Gestion des Étudiants</h1>
+            <div class="user-badge">
+                <span>Connecté entant que : <strong id="user-role-label">L2 Informatique Gestion</strong></span>
+            </div>
+        </header>
+
+        <!-- Formulaire d'ajout / modification (Réservé à l'Admin) -->
+        <section class="form-section card" id="admin-form-section" style="display: none;">
+            <h3 id="form-title">Ajouter un nouvel étudiant</h3>
+            <form id="form-etudiant">
+                <input type="hidden" id="edit-index" value="-1">
+                
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for="matricule">Matricule</label>
+                        <input type="text" id="matricule" placeholder="00125" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom" placeholder="Nom" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="prenom">Prénom</label>
+                        <input type="text" id="prenom" placeholder="Prénom" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="sexe">Sexe</label>
+                        <select id="sexe">
+                            <option value="M">Masculin</option>
+                            <option value="F">Féminin</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="btn-annuler" class="btn-secondary" style="display:none;">Annuler</button>
+                    <button type="submit" class="btn-principal" id="btn-submit">Enregistrer l'étudiant</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Tableau de la liste des étudiants -->
+        <section class="table-section card">
+            <h3 id="table-title">Liste des Étudiants</h3>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Matricule</th>
+                            <th>Nom & Prénom</th>
+                            <th>Sexe</th>
+                            <th id="th-actions">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="liste-etudiants">
+                        <!-- Rempli dynamiquement par JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal pour les "Détails / Voir plus" -->
+    <div id="modal-details" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fermerModal()">&times;</span>
+            <h2 style="color: var(--vert-principal, #2e7d32); margin-top: 0;">Profil de l'Étudiant</h2>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="etudiants.js"></script>
+</body>
+</html>
