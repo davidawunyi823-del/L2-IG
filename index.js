@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let redirectPage = '';
 
         // Vérification des identifiants et des mots de passe
-        if (username === 'admin' && password === 'admin123') {
+        if (username === 'admin' && password === 'admin2') {
             role = 'admin';
             redirectPage = 'etudiants.html'; 
         } else if (username === 'etudiant' && password === '1234') {
