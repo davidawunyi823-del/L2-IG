@@ -9,17 +9,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const username = usernameInput.value.trim().toLowerCase();
         const password = passwordInput.value.trim();
 
-        // Simulation de reconnaissance des rôles
         let role = '';
         let redirectPage = '';
 
-        // Règle de reconnaissance (tu pourras adapter selon tes besoins)
-        if (username === 'admin' || username.includes('administrateur')) {
+        // Vérification des identifiants et des mots de passe
+        if (username === 'admin' && password === 'admin123') {
             role = 'admin';
-            redirectPage = 'etudiants.html'; // Nom de la page admin à venir
-        } else {
+            redirectPage = 'etudiants.html'; 
+        } else if (username === 'etudiant' && password === '1234') {
             role = 'etudiant';
-            redirectPage = 'etudiants.html'; // Nom de la page étudiant à venir
+            redirectPage = 'etudiants.html'; 
+        } else {
+            // Alerte si le nom d'utilisateur ou le mot de passe est faux
+            alert("Nom d'utilisateur ou mot de passe incorrect !");
+            return; // Bloque la suite et évite la connexion
         }
 
         // Sauvegarde des informations de l'utilisateur connecté dans le localStorage
@@ -38,8 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Redirection après une courte pause pour apprécier l'animation
         setTimeout(() => {
-            // Pour l'instant, si les fichiers n'existent pas encore, 
-            // cela affichera une alerte ou tu pourras créer les pages suivantes.
             window.location.href = redirectPage;
         }, 800);
     });
