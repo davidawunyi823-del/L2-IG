@@ -141,3 +141,24 @@
     20%, 60% { transform: translateX(-5px); }
     40%, 80% { transform: translateX(5px); }
 }
+/* Adaptation mobile */
+@media (max-width: 768px) {
+    body.body-connexion {
+      padding: 15px;
+    }
+  
+    .login-card {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+  
+    .input-group input, 
+    .btn-connexion {
+      width: 100%;
+      font-size: 16px; /* Empêche le zoom automatique sur iPhone/Android */
+      padding: 12px;
+      box-sizing: border-box;
+    }
+  }
